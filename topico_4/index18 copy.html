@@ -5,118 +5,14 @@
     <title>Formulário para Calculadora - 18º Exemplo</title>
     <script src="js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="style/style18.css">
-
-    <style>
-        body {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0a192f;
-            margin: 0;
-            font-family: 'Noto Sans', sans-serif;
-            color: #e0e0e0;
-        }
-
-        .form {
-            padding: 20px;
-            background: #112240;
-            border: 2px solid #233554;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .formcontrol {
-            margin: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        input {
-            font-size: 18px;
-            padding: 10px;
-            border: none;
-            outline: none;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        input[type="text"] {
-            width: 300px;
-            height: 40px;
-            background: #1e2a47;
-            color: #e0e0e0;
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            cursor: default;
-            border: 2px solid #233554;
-        }
-
-        .num {
-            width: 64px;
-            height: 64px;
-            background-color: #233554;
-            color: #e0e0e0;
-            font-size: 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .num:hover {
-            background-color: #0dcaf0;
-            color: #112240;
-        }
-
-        .blue {
-            background-color: #0dcaf0;
-        }
-
-        .pin {
-            background-color: #f39cda;
-        }
-
-        .gre {
-            background-color: #6cd968;
-        }
-
-        .pur {
-            background-color: #8e63ff;
-        }
-
-        .ora {
-            background-color: #f2a22b;
-        }
-
-        .num.blue:hover {
-            background-color: #0a74d9;
-        }
-
-        .num.pin:hover {
-            background-color: #d184bf;
-        }
-
-        .num.gre:hover {
-            background-color: #5bbf58;
-        }
-
-        .num.pur:hover {
-            background-color: #784ee2;
-        }
-
-        .num.ora:hover {
-            background-color: #d48b22;
-        }
-    </style>
-
 </head>
 
 <body>
     <div class="form">
+
+        <div class="formcontrol">
+            <textarea style="resize: none;" rows="5" cols="20" id="taHistorico" readonly></textarea>
+        </div>
 
         <div class="formcontrol">
             <input type="text" value="" id="inputTexto" readonly size="100px">
@@ -160,8 +56,6 @@
 </body>
 <script type="text/javascript">
 
-    //Jquery permite para executar uma function após o click em um botão:
-
     $("#btnReset").click(function () {
 
         document.getElementById("inputTexto").value = "";
@@ -170,7 +64,6 @@
 
     $("#btnVirgula").click(function () {
 
-        //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
         var texto = document.getElementById("inputTexto").value;
 
         texto = texto + ".";
@@ -181,14 +74,10 @@
 
     $("#btn0").click(function () {
 
-        //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
-        //recuperacao da informacao que está no visor.
         var texto = document.getElementById("inputTexto").value;
 
-        //concatenacao do caracter
         texto = texto + "0";
 
-        //atualizacao do visor.
         document.getElementById("inputTexto").value = texto;
 
 
@@ -196,14 +85,10 @@
 
     $("#btn1").click(function () {
 
-        //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
-        //recuperacao da informacao que está no visor.
         var texto = document.getElementById("inputTexto").value;
 
-        //concatenacao do caracter
         texto = texto + "1";
 
-        //atualizacao do visor.
         document.getElementById("inputTexto").value = texto;
 
     });
@@ -267,15 +152,13 @@
 
     $("#btnSoma").click(function () {
 
-        //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
         var texto = document.getElementById("inputTexto").value;
 
         var posicao = texto.indexOf("+");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
+
             texto = texto + "+";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -291,10 +174,9 @@
 
         var posicao = texto.indexOf("-");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
+
             texto = texto + "-";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -309,10 +191,9 @@
 
         var posicao = texto.indexOf("/");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
+
             texto = texto + "/";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -327,10 +208,9 @@
 
         var posicao = texto.indexOf("*");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
+
             texto = texto + "*";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -345,10 +225,8 @@
 
         var posicao = texto.indexOf("^");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
             texto = texto + "^";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -363,10 +241,8 @@
 
         var posicao = texto.indexOf("√");
         if (posicao == -1) {
-            //concatena o caracter + na variavel
             texto = texto + "√";
 
-            //atualiza o input
             document.getElementById("inputTexto").value = texto;
         } else {
 
@@ -379,7 +255,6 @@
     $("#btnIgual").click(function () {
         var texto = document.getElementById("inputTexto").value;
 
-        // Identifica a operação
         var posicao_mais = texto.indexOf("+");
         var posicao_menos = texto.indexOf("-");
         var posicao_div = texto.indexOf("/");
@@ -387,7 +262,6 @@
         var posicao_expo = texto.indexOf("^");
         var posicao_raiz = texto.indexOf("√");
 
-        // Adição
         if (posicao_mais > -1) {
             var p1 = parseFloat(texto.substring(0, posicao_mais));
             var p2 = parseFloat(texto.substring(posicao_mais + 1));
@@ -395,22 +269,21 @@
                 alert("Operadores inválidos para soma!");
             } else {
                 document.getElementById("inputTexto").value = p1 + p2;
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + p1 + " + " + p2 + " = " + (p1 + p2);
             }
-        }
-
-        // Subtração
-        else if (posicao_menos > -1) {
+        } else if (posicao_menos > -1) {
             var p1 = parseFloat(texto.substring(0, posicao_menos));
             var p2 = parseFloat(texto.substring(posicao_menos + 1));
             if (isNaN(p1) || isNaN(p2)) {
                 alert("Operadores inválidos para subtração!");
             } else {
                 document.getElementById("inputTexto").value = p1 - p2;
-            }
-        }
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + p1 + " - " + p2 + " = " + (p1 - p2);
 
-        // Divisão
-        else if (posicao_div > -1) {
+            }
+        } else if (posicao_div > -1) {
             var p1 = parseFloat(texto.substring(0, posicao_div));
             var p2 = parseFloat(texto.substring(posicao_div + 1));
             if (isNaN(p1) || isNaN(p2)) {
@@ -419,30 +292,33 @@
                 alert("Divisão por zero não é permitida!");
             } else {
                 document.getElementById("inputTexto").value = p1 / p2;
-            }
-        }
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + p1 + " / " + p2 + " = " + (p1 / p2);
 
-        else if (posicao_multi > -1) {
+            }
+        } else if (posicao_multi > -1) {
             var p1 = parseFloat(texto.substring(0, posicao_multi));
             var p2 = parseFloat(texto.substring(posicao_multi + 1));
             if (isNaN(p1) || isNaN(p2)) {
                 alert("Operadores inválidos para multiplicação!");
             } else {
                 document.getElementById("inputTexto").value = p1 * p2;
-            }
-        }
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + p1 + " * " + p2 + " = " + (p1 * p2);
 
-        else if (posicao_expo > -1) {
+            }
+        } else if (posicao_expo > -1) {
             var p1 = parseFloat(texto.substring(0, posicao_expo));
             var p2 = parseFloat(texto.substring(posicao_expo + 1));
             if (isNaN(p1) || isNaN(p2)) {
                 alert("Operadores inválidos para potência!");
             } else {
                 document.getElementById("inputTexto").value = p1 ** p2;
-            }
-        }
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + p1 + " ^ " + p2 + " = " + (p1 ** p2);
 
-        else if (posicao_raiz > -1) {
+            }
+        } else if (posicao_raiz > -1) {
             var p2 = parseFloat(texto.substring(posicao_raiz + 1));
             if (isNaN(p2)) {
                 alert("Operador inválido para raiz quadrada!");
@@ -450,14 +326,14 @@
                 alert("Não é possível calcular a raiz de um número negativo!");
             } else {
                 document.getElementById("inputTexto").value = Math.sqrt(p2);
-            }
-        }
+                document.getElementById("taHistorico").value = 
+                document.getElementById("taHistorico").value + "\n" + " √ " + p2 + " = " + Math.sqrt(p2);
 
-        else {
+            }
+        } else {
             alert("Operação inválida!");
         }
     });
-
 </script>
 
 </html>
