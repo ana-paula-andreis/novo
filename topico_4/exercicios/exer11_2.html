@@ -2,10 +2,37 @@
 <head>
     <script>
          var resultado = 0;
-         var operacao = prompt("Informe a operação (1,2,3,4) :");
-         var operando1 = prompt("Informe o primeiro operando:");
-         var operando2 = prompt("Informe o segundo operando :");
+         var operacao = prompt("Informe a operação:\n 1 : soma, \n 2 : subtração, \n 3 : multiplicação,\n 4 : divisão,\n 5 : porcentagem,\n 6 : raiz,\n 7 : exponenciação");
+         var n1 = prompt("Informe o primeiro operando:");
+         var n2 = prompt("Informe o segundo operando :");
 
+         n1 = parseFloat(n1);
+         n2= parseFloat(n2);
+
+         if(operacao <1 || operacao >7){
+            document.write("Operação Invalida! Reveja as operações")
+         }else if(operacao == 1){
+
+            resultado = n1 + n2;
+         }else if(operacao == 2){
+
+            resultado = n1 - n2;
+         }else if(operacao == 3){
+
+            resultado = n1 * n2;
+         }else if(operacao == 4){
+
+            resultado = n1 / n2;
+         }else if(operacao == 5){
+
+            resultado = (n1 * n2) /100
+         }else if(operacao == 6){
+
+            resultado = Math.pow(n1, 1 / n2)
+         }else if(operacao == 7){
+
+            resultado = Math.pow(n1, n2);
+         }
 
          /* Exercício sobre estrutura de seleção if/else.
 

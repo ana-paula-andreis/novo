@@ -1,65 +1,95 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>JavaScript para datas - 11.1 Exercício</title>
-        <script>
-            //cria a variavel data_atual
-            var data_atual;
 
-            //atribui para a variável da data atual do PC
-            data_atual = new Date();
-            
-        </script>
-    </head>
-    <body>
-      
-        <h1>Exercícios sobre Datas:</h1>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript para datas - 11.1 Exercício</title>
+    <script>
+        //cria a variavel data_atual
+        var data_atual;
 
-        <p> 
-            Questao 1: imprimir aqui o dia do mês atual.<br>
-    
-        </p>
+        //atribui para a variável da data atual do PC
+        data_atual = new Date();
 
-        <p> 
-            Questao 2: imprimir aqui o mês do ano atual. <br>
-         
-        </p>
+        dia_mes = data_atual.getDate();
 
-        <p> 
-            Questao 3: imprimir aqui dia e mês atual, 10/06 ou 10 de junho: <br>
+        mes_ano = data_atual.getMonth() + 1;
 
-        </p>
+        diaemes = data_atual.getDate() + "/" + mes_ano;
 
-        <p> 
-            Questao 4: imprimir aqui hora e minuto atual. ex: 09:26:<br>
-     
-        </p>
+        hora_minuto = data_atual.getHours() + ":" + data_atual.getMinutes();
 
-        <ul>
-
-            <li>Hora atual no formato 24 horas:<br>
-                
-            </li>
-            <li>Hora atual no formato 12 horas:<br>
-               
-            </li>
-                
-            <li>Data atual no formato yyyy/mm/dd:<br>
-            
-            </li>
-                        
-
-            <li>Quantidade de segundos decorridos hoje:<br>
-                
-
-            </li>
-        </ul>
+        f24 = data_atual.getHours();
+        f12 = f24 - 12;
 
 
 
-       
+        hora = data_atual.getHours();
+        minuto = data_atual.getMinutes();
+        segundos = data_atual.getSeconds();
+
+        segundosdec = (hora * 3600) + (minuto * 60) + (segundos);
+
+        anomesdia = data_atual.getFullYear() + "/" + mes_ano + "/" + data_atual.getDate();
+    </script>
+</head>
+
+<body>
+
+    <h1>Exercícios sobre Datas:</h1>
+
+    <p>
+        Questao 1: imprimir aqui o dia do mês atual.<br>
+        <script>document.write(dia_mes)</script>
+
+    </p>
+
+    <p>
+        Questao 2: imprimir aqui o mês do ano atual. <br>
+        <script>document.write(mes_ano)</script>
+    </p>
+
+    <p>
+        Questao 3: imprimir aqui dia e mês atual, 10/06 ou 10 de junho: <br>
+        <script>document.write(diaemes)</script>
+    </p>
+
+    <p>
+        Questao 4: imprimir aqui hora e minuto atual. ex: 09:26:<br>
+        <script>document.write(hora_minuto)</script>
+    </p>
+
+    <ul>
+
+        <li>Hora atual no formato 24 horas:<br>
+            <script>document.write(f24)</script>
+        </li>
+        <li>Hora atual no formato 12 horas:<br>
+            <script>
+                if (f24 > 12) {
+                    document.write(f12);
+                } else {
+                    document.write(f24);
+                } 
+            </script>
+        </li>
+
+        <li>Data atual no formato yyyy/mm/dd:<br>
+            <script>document.write(anomesdia)</script>
+        </li>
+
+
+        <li>Quantidade de segundos decorridos hoje:<br>
+            <script>document.write(segundosdec)</script>
+
+        </li>
+    </ul>
 
 
 
-    </body>
-</html>    
+
+
+
+
+</body>
+
+</html>

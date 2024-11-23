@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <title>JavaScript, entrada de dados e conversões - 13º Exemplo</title>
         <script>
-            var n1, n2, soma;
+            var n1, n2, n3, media;
 
             //Documentação sobre o pacote Window: https://www.w3schools.com/jsref/met_win_prompt.asp
 
@@ -14,14 +14,18 @@
             //documentação sobre o método parseInt: https://www.w3schools.com/jsref/jsref_parseint.asp
             n2 = prompt("Informe um novo número inteiro: ");
 
+            n3 = prompt("Informe um numero inteiro: ")
+
             //alert("variavel n1 : " + n1);//gera uma janela de alerta imprimindo na tela o conteudo da variavel n1
             //alert("variavel n2 : " + n2);
 
-            n1 = parseInt(n1);//o metodo parseInt converte String para Int
+            n1 = parseFloat(n1);//o metodo parseInt converte String para Int
             //alert(n1);//gera uma janela de alerta com a informação contida em n1
 
-            n2 = parseInt(n2);//converte
+            n2 = parseFloat(n2);//converte
             //alert(n2);//gera uma janela
+
+            n3 = parseFloat(n3);
 
             //estrutura de seleção: if/else
             //se a expressão retornar true, executa os comandos que estão dentro do corpo do if
@@ -30,8 +34,9 @@
                 alert("Não foi possível realizar a soma, informe valores inteiros !");
                 soma = 0;
             }else{
-                soma =  n1 + n2 ;//soma e depois atribui
+                media =  (n1 + n2 + n3)/3;//soma e depois atribui
             }
+
            //verificar se o retorno do parseInt é um number utilizando
            //o método isNaN().
         </script>
@@ -42,7 +47,7 @@
             </span>
             <script>
                  //documentacao sobre o método write: https://www.w3schools.com/jsref/met_doc_write.asp
-                 document.write(soma);
+                 document.write(media);
             </script>   
         </p>
     </body>
